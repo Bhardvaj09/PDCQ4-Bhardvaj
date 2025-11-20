@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+
+    <style>
+.profile-pic {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 20px;
+}
+</style>
+</head>
+<body>
+{% if user.picture %}
+<img src="{{ user.picture }}" class="profile-pic">
+{% endif %}
+
+<h3>Hello {{ user.name }} <a href="/logout">[Sign out]</a></h3>
+<p>You are signed in with the email {{ user.email }}</p>
+
+
+<p>Current Indian Time: {{ time }}</p>
+
+<hr>
+
+<a href="/pattern"><button>Go to Pattern Printer</button></a>
+</body>
+</html>
